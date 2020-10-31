@@ -4,10 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>This is master password_get_info</title>
-
-
-        
+        <title>this is master branch</title>
 
         
     </head>
