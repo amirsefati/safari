@@ -1,0 +1,33 @@
+.top_nav_a{
+    margin: 10px 15px 15px 10px;
+    color: white;
+}
+.top_nav{
+    padding: 20px;
+    background: #046b7c;
+    overflow: hidden;
+}
+.top_nav_icon_mobile{
+    display: none;
+}
+
+@media screen and (max-width: 600px){
+    .top_nav a:not(:first-child) {
+        display: none;
+    }
+    
+    .top_nav_icon_mobile{
+        display: block;
+        text-align: left;
+        position: absolute;
+        left: 35px;
+        top: 12px;
+        color: wheat;
+        font-size: 24px;
+    }
+    
+    .top_nav.responsive a{
+        display: block;
+        text-align: right;
+    }
+}

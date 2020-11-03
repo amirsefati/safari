@@ -1,0 +1,13 @@
+@import '~antd/dist/antd.css';
+
+@font-face{
+    font-family:"irsanase";
+    src:
+        url('/fonts/iranyekanwebregular.ttf') format('truetype'),
+        url('/fonts/iranyekanwebregular.woff') format('woff'),
+        url('/fonts/iranyekanwebregular.woff2') format('woff2'),
+}
+
+.body_section{
+    font-family: "irsanase";
+}

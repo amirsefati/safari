@@ -1,0 +1,25 @@
+.login_panel{
+    background: #e3e7e6;
+    height: calc(100vh - 63px);
+}
+.login_layout{
+    background: white;
+    min-height: 500px;
+    height: 550px;
+    margin-top: 50px;
+}
+
+.login_logo{
+    text-align: center;
+}
+.login_text_under_logo{
+    text-align: center;
+}
+
+.login_btn_login{
+    text-align: center;
+}
+
+.login_forget_password{
+    text-align: center;
+}
