@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,4 +21,10 @@ Route::get('', function () {
 Route::get('/{any}', function () {
     return view('index');
 });
+
+Route::post('/apiv1/loginform', [HomeController::class,'loginform']);
+
+Route::post('/apiv1/registeruser', [HomeController::class,'registeruser']);
+
+Route::get('/apiv1/checklogin', [HomeController::class,'checklogin']);
 

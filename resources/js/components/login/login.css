@@ -16,10 +16,25 @@
     text-align: center;
 }
 
-.login_btn_login{
+.login_form{
     text-align: center;
+    margin: auto;
 }
 
 .login_forget_password{
     text-align: center;
+}
+.ant-form-item-explain{
+    font-size: 11px!important;
+}
+.ant-form-item-label > label{
+    direction: ltr;
+}
+.ant-form-item-label{
+    text-align: right!important;
+}
+
+.ant-form-item-explain-error{
+    text-align: right !important;
+    padding:3px 5px;
 }

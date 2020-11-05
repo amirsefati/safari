@@ -11,3 +11,13 @@
 .body_section{
     font-family: "irsanase";
 }
+.ant-notification-notice-message{
+    text-align: right;
+}
+.ant-notification-notice{
+    background: #FF5E5B;
+    color: white;
+}
+.ant-notification-notice-closable .ant-notification-notice-message{
+    color: white;  
+}
