@@ -22,6 +22,10 @@ Route::get('/{any}', function () {
     return view('index');
 });
 
+Route::get('/panel/{any}', function () {
+    return view('index');
+});
+
 Route::post('/apiv1/loginform', [HomeController::class,'loginform']);
 
 Route::post('/apiv1/registeruser', [HomeController::class,'registeruser']);

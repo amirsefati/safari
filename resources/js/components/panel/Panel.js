@@ -4,11 +4,13 @@ import {
   DesktopOutlined,
   PieChartOutlined,
   FileOutlined,
-  TeamOutlined,
   UserOutlined,
 } from '@ant-design/icons';
 import './panel.css'
-import {Link} from 'react-router-dom'
+import {Link,Switch,Route, BrowserRouter as Router, Redirect} from 'react-router-dom'
+import Panel_register from '../panel_register/Panel_register';
+import Panel_news from '../panel_news/Panel_news';
+import Writing from '../panel_send/Writing';
 
 const { Header, Content, Footer, Sider } = Layout;
 const { SubMenu } = Menu;
@@ -49,23 +51,29 @@ function Panel(props){
           <div className="logo" />
           <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline">
             <Menu.Item key="1" icon={<PieChartOutlined />}>
-             &nbsp;  اخبار همایش
+            <Link to="/panel/news">
+
+             &nbsp;  اخبار همایش</Link>
             </Menu.Item>
             <Menu.Item key="2" icon={<DesktopOutlined />}>
-            &nbsp;  ثبت نام در همایش
+            <Link to="/panel/register">
+
+            &nbsp;  ثبت نام در همایش</Link>
             </Menu.Item>
             <SubMenu key="sub1" icon={<UserOutlined />} title="&nbsp; ارسال آثار">
               
-              <Menu.Item key="3">نگارشی</Menu.Item>
-              <Menu.Item key="4">گرافیک</Menu.Item>
-              <Menu.Item key="5">مالتی مدیا</Menu.Item>
+              <Menu.Item key="3"><Link to="/panel/writing">نگارشی</Link></Menu.Item>
+              <Menu.Item key="4"><Link to="/panel/graphic">گرافیک</Link></Menu.Item>
+              <Menu.Item key="5"><Link to="/panel/multiemdia">مالتی مدیا</Link></Menu.Item>
             </SubMenu>
             <Menu.Item key="9" icon={<FileOutlined />}>
-            &nbsp; نتایج
+              <Link to="/panel/result">
+            &nbsp; نتایج</Link>
             </Menu.Item>
 
             <Menu.Item key="10" icon={<PieChartOutlined />}>
-             &nbsp;  تنظمیات کاربری
+              <Link to="/panel/settings">
+             &nbsp;  تنظمیات کاربری</Link>
             </Menu.Item>
 
             <Menu.Item key="11" icon={<PieChartOutlined />}>
@@ -84,7 +92,12 @@ function Panel(props){
               <Breadcrumb.Item>داشبورد کاربر</Breadcrumb.Item>
             </Breadcrumb>
             <div className="site-layout-background" style={{ padding: 24, minHeight: 360 }}>
-              
+              <Switch>
+                  <Route path="/panel/register" component={Panel_register}></Route>
+                  <Route path="/panel/news" component={Panel_news}></Route>
+                  <Route path="/panel/writing" component={Writing}></Route>
+
+              </Switch>
             </div>
           </Content>
           <Footer style={{ textAlign: 'center' }}>اولین همایش تخصصی اخراج آمریکا از منطقه (1399)</Footer>
