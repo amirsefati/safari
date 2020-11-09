@@ -1,6 +1,6 @@
 import React, { useState,useEffect } from 'react';
 import ReactDOM from 'react-dom';
-import {Link,Switch,Route, BrowserRouter as Router, Redirect} from 'react-router-dom'
+import {Link,Switch,Route, BrowserRouter as Router, Redirect, useHistory} from 'react-router-dom'
 import Login from './login/Login';
 import Signin from './signin/Signin';
 import NavBar from './navbar/Navbar';
@@ -28,6 +28,8 @@ function Example(){
           if(res.data['status'] === 200){
               setLogin(1)
               setuser(res.data['user']);
+          }else{
+            
           }
       })
     }

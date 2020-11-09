@@ -67,4 +67,8 @@ class HomeController extends Controller
             return ['status'=>102];
         }
     }
+
+    public function upload_file(Request $request){
+        
+    }
 }

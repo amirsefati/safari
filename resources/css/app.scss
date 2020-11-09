@@ -21,3 +21,12 @@
 .ant-notification-notice-closable .ant-notification-notice-message{
     color: white;  
 }
+.ant-card-actions{
+    background:#F5F5F5!important;
+}
+.ant-card-actions > li:not(:last-child){
+    border-right:1px solid #4C5760!important;
+}
+.ant-upload-list-item-card-actions{
+    right: 90%!important;
+}
