@@ -21,9 +21,7 @@ function Home(){
                         <div style={contentStyle}>
                             <img src={Slider1} style={{width:"100%"}}/>
                         </div>
-                        <div style={contentStyle}>
-                            <img src={Slider1} style={{width:"100%"}}/>
-                        </div>
+                       
                         
                     </Carousel>
                 </Col>
