@@ -1,0 +1,58 @@
+.login_panel{
+    background: #e3e7e6;
+    height: calc(120vh - 63px);
+}
+.signin_layout{
+    background: white;
+    min-height: 500px;
+    height: 680px;
+    margin-top: 50px;
+}
+@media screen and (max-width: 600px){
+    .signin_layout{
+        background: white;
+        min-height: 500px;
+        height: 940px;
+        margin-top: 50px;
+    }
+
+    .login_panel{
+        background: #e3e7e6;
+        height: calc(160vh - 63px);
+    }
+}
+.login_logo{
+    text-align: center;
+}
+.login_text_under_logo{
+    text-align: center;
+}
+
+.login_form{
+    text-align: center;
+    margin: auto;
+}
+
+.login_forget_password{
+    text-align: center;
+}
+.ant-form-item-explain{
+    font-size: 11px!important;
+}
+.ant-form-item-label > label{
+    direction: ltr;
+}
+.ant-form-item-label{
+    text-align: right!important;
+}
+
+.ant-form-item-explain-error{
+    text-align: right !important;
+    padding:3px 5px;
+}
+.ant-tooltip-inner{
+    text-align: center!important;
+}
+.ant-input-affix-wrapper > input.ant-input{
+    padding-right: 15px!important;
+}

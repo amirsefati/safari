@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,24 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('', function () {
+    return view('index');
 });
+
+Route::get('/{any}', function () {
+    return view('index');
+});
+
+Route::get('/panel/{any}', function () {
+    return view('index');
+});
+
+Route::post('/apiv1/loginform', [HomeController::class,'loginform']);
+
+Route::post('/apiv1/registeruser', [HomeController::class,'registeruser']);
+
+Route::get('/apiv1/checklogin', [HomeController::class,'checklogin']);
+
+Route::post('/apiv1/upload_file', [HomeController::class,'upload_file']);
+
+

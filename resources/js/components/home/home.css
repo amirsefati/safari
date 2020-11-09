@@ -1,0 +1,67 @@
+.row_1{
+    text-align: center;
+    padding: 20px 5px 10px 4px;
+}
+.row_1_section_2{
+    text-align: center;
+
+}
+.row_1_imglogo{
+    width: 80px;
+}
+.panel_name{
+
+}
+
+.panel_name_section_1{
+    background: #7D1538;
+    height: 320px;
+}
+
+.panel_name_section_2{
+    background: #3E5641;
+    height: 320px;
+}
+
+.panel_name_section_3{
+    background: #255F85 ;
+    height: 320px;
+}
+
+.first_event{
+    padding: 70px;
+    text-align: center;
+}
+
+
+.graphic_section_1{
+    background: #40C9A2;
+    height: 320px;
+}
+
+.graphic_section_2{
+    background: #3E5641;
+    height: 320px;
+}
+
+.graphic_section_3{
+    background: #F4D35E ;
+    height: 320px;
+}
+
+.main_idea{
+    text-align: center;
+    padding: 40px;
+}
+
+.teaser_congre{
+    text-align: center;
+    background: #CCA43B;
+    height: 350px;
+}
+
+.teaser_compet{
+    text-align: center;
+    background: #F25F5C;
+    height: 350px;
+}
