@@ -2,9 +2,10 @@ import React from 'react'
 import {Row , Col , Divider } from 'antd'
 import {Carousel} from 'antd'
 import './home.css'
+import Slider1 from './../images/slider1.png'
 
 const contentStyle = {
-    height: '540px',
+    height: 'auto',
     color: '#fff',
     lineHeight: '160px',
     textAlign: 'center',
@@ -17,18 +18,13 @@ function Home(){
             <Row>
                 <Col span={24}>
                     <Carousel autoplay>
-                        <div>
-                        <h3 style={contentStyle}>1</h3>
+                        <div style={contentStyle}>
+                            <img src={Slider1} style={{width:"100%"}}/>
                         </div>
-                        <div>
-                        <h3 style={contentStyle}>2</h3>
+                        <div style={contentStyle}>
+                            <img src={Slider1} style={{width:"100%"}}/>
                         </div>
-                        <div>
-                        <h3 style={contentStyle}>3</h3>
-                        </div>
-                        <div>
-                        <h3 style={contentStyle}>4</h3>
-                        </div>
+                        
                     </Carousel>
                 </Col>
 
