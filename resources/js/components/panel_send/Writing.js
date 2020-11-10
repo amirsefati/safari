@@ -7,6 +7,7 @@ import {
     Input,
     Row,
     Col,
+    notification
   } from 'antd';
 import { UploadOutlined,TagOutlined   , InboxOutlined } from '@ant-design/icons';
 import Axios from 'axios';
@@ -68,7 +69,7 @@ function Writing(porps){
               message:'فایل با موفقیت آپلود شد',
               description:'با تشکر از شما'
             })
-            setUploading(false)
+            setUploading( false)
           }else{
             notification.open({
               message:'خطا',
