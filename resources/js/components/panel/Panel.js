@@ -7,13 +7,14 @@ import {
   UserOutlined,
 } from '@ant-design/icons';
 import './panel.css'
-import {Link,Switch,Route, BrowserRouter as Router, Redirect} from 'react-router-dom'
+import {Link,Switch,Route,useHistory, BrowserRouter as Router, Redirect} from 'react-router-dom'
 import Panel_register from '../panel_register/Panel_register';
 import Panel_news from '../panel_news/Panel_news';
 import Writing from '../panel_send/Writing';
 import Graphic from '../panel_send/Graphic';
 import Multiemdia from '../panel_send/Multiemdia';
-
+import Result from '../panel_result/Result'
+import Axios from 'axios';
 
 const { Header, Content, Footer, Sider } = Layout;
 const { SubMenu } = Menu;
@@ -24,6 +25,7 @@ const { SubMenu } = Menu;
 function Panel(props){
 
     const [collapsed,setCollapsed] = useState(false)
+    const History = useHistory()
 
    useEffect(()=>{
        if(window.innerWidth < 500){
@@ -45,7 +47,14 @@ function Panel(props){
         }
       };
 
-      
+      function logout(){
+        Axios.get('/apiv1/logout')
+        .then((res)=>{
+          History.push('/')
+          props.check('HAHA')
+
+        })
+      }
 
     return(
         <div>
@@ -58,11 +67,7 @@ function Panel(props){
 
              &nbsp;  اخبار همایش</Link>
             </Menu.Item>
-            <Menu.Item key="2" icon={<DesktopOutlined />}>
-            <Link to="/panel/register">
-
-            &nbsp;  ثبت نام در همایش</Link>
-            </Menu.Item>
+            
             <SubMenu key="sub1" icon={<UserOutlined />} title="&nbsp; ارسال آثار">
               
               <Menu.Item key="3"><Link to="/panel/writing">نگارشی</Link></Menu.Item>
@@ -79,7 +84,7 @@ function Panel(props){
              &nbsp;  تنظمیات کاربری</Link>
             </Menu.Item>
 
-            <Menu.Item key="11" icon={<PieChartOutlined />}>
+            <Menu.Item key="11" icon={<PieChartOutlined />} onClick={logout}>
              &nbsp;  خروج
             </Menu.Item>
           </Menu>
@@ -101,7 +106,9 @@ function Panel(props){
                   <Route path="/panel/writing" component={Writing}></Route>
                   <Route path="/panel/graphic" component={Graphic}></Route>
                   <Route path="/panel/multiemdia" component={Multiemdia}></Route>
+                  <Route path="/panel/result" component={Result}></Route>
 
+                  
                   
               </Switch>
             </div>

@@ -87,6 +87,8 @@ class HomeController extends Controller
             'axis' => $select,
             'kind' => $kind,
             'files' => $url,
+            'status' => 'در حال بررسی',
+            'etc1' => rand(25000,900000)
 
         ]);
         $user_id = Auth::user()->id;
@@ -97,5 +99,19 @@ class HomeController extends Controller
 
     public function checkfiles(Request $request){
         return 'ok';
+    }
+
+
+    public function get_media(Request $request){
+        if(Auth::check()){
+            $user = Auth::user();
+            $data = $user->user_to_file;
+            return ['status'=>200,'data'=>$data];
+        }
+    }
+
+    public function logout(){
+        Auth::logout();
+        return ['status'=>200];
     }
 }

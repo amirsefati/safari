@@ -36,3 +36,6 @@ Route::post('/apiv1/upload_file', [HomeController::class,'upload_file']);
 
 Route::post('/apiv1/checkfiles', [HomeController::class,'checkfiles']);
 
+Route::post('/apiv1/get_media', [HomeController::class,'get_media']);
+
+Route::get('/apiv1/logout', [HomeController::class,'logout']);

@@ -43,4 +43,8 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function user_to_file(){
+        return $this->belongsToMany(File::class,'file_user');
+    }
 }

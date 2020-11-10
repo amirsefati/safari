@@ -22,7 +22,7 @@ function Example(){
 
     useEffect(()=>{   
         checkuser()
-    },[false])
+    },[])
 
     function checkuser(){
       Axios.get('/apiv1/checklogin')
@@ -30,8 +30,10 @@ function Example(){
           if(res.data['status'] === 200){
               setLogin(1)
               setuser(res.data['user']);
+              console.log('check')
           }else{
-            
+            setLogin(0)
+
           }
       })
     }
@@ -49,7 +51,7 @@ function Example(){
           <Route exact path="/" component={Home}></Route>
           <Route  path="/login" render={() => <Login check={checkuser}/>} ></Route>
           <Route  path="/signin" component={() => <Signin check={checkuser}/>}></Route>
-          <Route  path="/panel" render={() => <Panel data={user}/>}></Route>
+          <Route  path="/panel" render={() => <Panel data={user} check={checkuser}/>}></Route>
           <Route  path="/about" component={About}></Route>
           <Route  path="/intro" component={Intro}></Route>
 

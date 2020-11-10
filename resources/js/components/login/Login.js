@@ -32,7 +32,7 @@ const Login = (props) => {
                 message:'ورود به سامانه',
                 description:'ورود به سامانه با موفقیت انجام شد'
               });
-            History.push('panel')
+            History.push('panel/news')
         }else{
             notification.open({
                 message:'خطا',

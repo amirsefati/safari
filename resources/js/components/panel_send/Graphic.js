@@ -11,6 +11,7 @@ import {
   } from 'antd';
 import { UploadOutlined,TagOutlined   , InboxOutlined } from '@ant-design/icons';
 import Axios from 'axios';
+import {Link, useHistory} from 'react-router-dom'
 
 const { Option, OptGroup } = Select;
 
@@ -46,9 +47,10 @@ function Writing(porps){
     const handleChangeInput = input =>{
       setinputTitle(input.target.value)
     }
+    const History = useHistory()
 
     const handleUpload = () => {
-      
+
         const formData = new FormData();
         fileList.forEach(file => {
           formData.append('files[]', file);
@@ -70,6 +72,10 @@ function Writing(porps){
               description:'با تشکر از شما'
             })
             setUploading(false)
+            setTimeout(() => {
+              History.push('result')
+
+            }, 3000);
           }else{
             notification.open({
               message:'خطا',
@@ -96,6 +102,19 @@ function Writing(porps){
 
     return(
         <div>
+
+          <Row>
+           <Col md={3} xs={8}>
+                دسته بندی
+              </Col>
+
+              <Col md={16} xs={16}>
+              ارسال اثر گرافیکی
+              </Col>
+           </Row>
+           <br/>
+
+
             <Row>
               <Col md={3} xs={8}>
                 عنوان اثر
@@ -115,21 +134,21 @@ function Writing(porps){
               <Col md={16} xs={16}>
                   <Select defaultValue="انتخاب محور اثر" style={{ width: "100%" }} onChange={handleChangeSelect}>
                     <OptGroup label="نیمه پنهان" >
-                      <Option value="1">جنایات آمریکا در منطقه</Option>
-                      <Option value="2">نفوذ اقتصادی آمریکا در منطقه</Option>
-                      <Option value="3">نفوذ نظامی-امنیتی آمریکا در منطقه</Option>
-                      <Option value="4">راهبرد های آمریکا در منطقه</Option>
+                    <Option value="جنایات آمریکا در منطقه">جنایات آمریکا در منطقه</Option>
+                      <Option value="نفوذ اقتصادی آمریکا در منطقه">نفوذ اقتصادی آمریکا در منطقه</Option>
+                      <Option value="نفوذ نظامی-امنیتی آمریکا در منطقه">نفوذ نظامی-امنیتی آمریکا در منطقه</Option>
+                      <Option value="راهبرد های آمریکا در منطقه">راهبرد های آمریکا در منطقه</Option>
 
                     </OptGroup>
                     <OptGroup label="منطقه زیر زره بین">
-                      <Option value="5">تحلیل جریان های آمریکایی و ضد آمریکایی در منطقه</Option>
+                      <Option value="تحلیل جریان های آمریکایی و ضد آمریکایی در منطقه">تحلیل جریان های آمریکایی و ضد آمریکایی در منطقه</Option>
                     </OptGroup>
 
                     <OptGroup label="خروش منطقه علیه استکبار">
-                      <Option value="6">نقش ظرفیت های مردمی در اخراج آمریکا از منطقه</Option>
-                      <Option value="7">راهکار های اقتصادی اخراج آمریکا از منطقه</Option>
-                      <Option value="8">راهکار های نظامی-امنیتی اخراج آمریکا از منطقه</Option>
-                      <Option value="9">راهکار های سیاسی اخراج آمریکا از منطقه</Option>
+                      <Option value="نقش ظرفیت های مردمی در اخراج آمریکا از منطقه">نقش ظرفیت های مردمی در اخراج آمریکا از منطقه</Option>
+                      <Option value="راهکار های اقتصادی اخراج آمریکا از منطقه">راهکار های اقتصادی اخراج آمریکا از منطقه</Option>
+                      <Option value="راهکار های نظامی-امنیتی اخراج آمریکا از منطقه">راهکار های نظامی-امنیتی اخراج آمریکا از منطقه</Option>
+                      <Option value="راهکار های سیاسی اخراج آمریکا از منطقه">راهکار های سیاسی اخراج آمریکا از منطقه</Option>
 
                     </OptGroup>
                   </Select>        
