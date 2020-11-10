@@ -69,7 +69,7 @@ function Writing(porps){
               message:'فایل با موفقیت آپلود شد',
               description:'با تشکر از شما'
             })
-            setUploading( false)
+            setUploading(false)
           }else{
             notification.open({
               message:'خطا',
