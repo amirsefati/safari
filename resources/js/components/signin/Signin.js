@@ -62,7 +62,7 @@ const formItemLayout = {
   };
 
   
-const Signin = () => {
+const Signin = (props) => {
     const [form] = Form.useForm();
     const History = useHistory()
 
@@ -80,6 +80,7 @@ const Signin = () => {
               message:'ثبت نام با موفقیت انجام شد',
               description:'شما وارد سایت شدید'
             })
+            props.check('HAHA')
 
             History.push('panel/news')
 

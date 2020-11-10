@@ -46,7 +46,7 @@ function Example(){
         <Switch>
           <Route exact path="/" component={Home}></Route>
           <Route  path="/login" render={() => <Login check={checkuser}/>} ></Route>
-          <Route  path="/signin" component={Signin}></Route>
+          <Route  path="/signin" component={() => <Signin check={checkuser}/>}></Route>
           <Route  path="/panel" render={() => <Panel data={user}/>}></Route>
 
         </Switch>
