@@ -108,10 +108,10 @@ function Home(){
             <br/>
 
             <Row>
-                <Col md={12} xs={12} className="teaser_congre">
+                <Col md={12} xs={24} className="teaser_congre">
                     <img src={Schedule} style={{width:"100%",borderRadius:"20px 0px 0px 20px"}}/>
                 </Col>
-                <Col md={12} xs={12} className="teaser_compet"> 
+                <Col md={12} xs={24} className="teaser_compet"> 
 
                         <p style={{fontSize:"18px",fontWeight:'bold'}}>
                         شرکت در رویداد تخصصی اخراج آمریکا از منطقه
@@ -129,46 +129,6 @@ function Home(){
                 </Col>
                 </Row> */}
 
-                <Row>
-                    <Col md={5} xs={1}></Col>
-                    <Col md={15} xs={1}>
-                        <p style={{fontSize:"20px",fontWeight:"bold"}}>
-                            جوایز
-                        </p>
-
-                        <p>
-                        حوزه نوشتاری 
-                        </p>
-                        <p>
-                        🥇 ۲ میلیون تومان
-                        🥈۱ونیم میلیون تومان
-                        🥉۱ میلیون تومان               
-                        </p>
-
-                        <p>
-                        حوزه گرافیکی:
-                        </p>
-                        <p>
-                        🥇۳ میلیون تومان
-                        🥈 ۲ میلیون تومان
-                        🥉 ۱ میلیون تومان
-                        </p>
-
-                        <p>
-                        حوزه ویدیویی:
-                        </p>
-                        <p>
-                        🥇 ۴ میلیون تومان
-                        🥈 ۳ میلیون تومان
-                        🥉 ۲ میلیون تومان
-                        </p>
-                        <br/>
-                        <p>
-                        🎁🎁 جایزه ویژه بهترین ایده پردازی برای اخراج آمریکا از منطقه: ۲ میلیون تومان
-                        </p>
-                    </Col>
-
-                </Row>
                 </Col>
 
             </Row>
