@@ -34,4 +34,5 @@ Route::get('/apiv1/checklogin', [HomeController::class,'checklogin']);
 
 Route::post('/apiv1/upload_file', [HomeController::class,'upload_file']);
 
+Route::post('/apiv1/checkfiles', [HomeController::class,'checkfiles']);
 

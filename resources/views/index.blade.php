@@ -7,7 +7,11 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>کنگره ی ضد آمریکا</title>
+
+    <meta name="description" content="کنگره ی ضد آمریکا">
+    <meta name="keywords" content="خروش, کنگره ی ضد آمریکا">
+    <meta name="author" content="sefati100@gmail.com">
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
 

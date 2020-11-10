@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './signin.css'
 import Axios from 'axios';
-import {Link} from 'react-router-dom'
+import {Link,useHistory} from 'react-router-dom'
 import Logo from './../images/logo_safari.png'
 
 import {
@@ -64,6 +64,7 @@ const formItemLayout = {
   
 const Signin = () => {
     const [form] = Form.useForm();
+    const History = useHistory()
 
     const onFinish = values => {
       Axios.post('/apiv1/registeruser',{
@@ -75,7 +76,13 @@ const Signin = () => {
               description:'چنین کاربری با این ایمیل در سامانه  قبلا ثبت شده است'
             })
           }else if(res.data === 200){
-            alert('ok')
+            notification.open({
+              message:'ثبت نام با موفقیت انجام شد',
+              description:'شما وارد سایت شدید'
+            })
+
+            History.push('panel/news')
+
           }else{
             alert('مشکلی پیش آمده لطفا با مدیریت تماس بگیرید')
           }
@@ -105,7 +112,7 @@ const Signin = () => {
 
                         <Row className="login_text_under_logo">
                             <Col span={24}>
-                                متن
+                                <br/>
                             </Col>
                         </Row>
 

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\File;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
@@ -69,6 +70,32 @@ class HomeController extends Controller
     }
 
     public function upload_file(Request $request){
+        $input = $request['input'];
+        $select = $request['select'];
+        $files = $request['files'];
+        $kind = $request['kind'];
         
+            $image = $files[0];
+            $name = time().'.'.$image->getClientOriginalExtension();
+            $destinationPath = public_path('/files/');
+            $image->move($destinationPath, $name);
+            $url = '/files/' . $name ;
+
+
+        $file = File::create([
+            'title' => $input,
+            'axis' => $select,
+            'kind' => $kind,
+            'files' => $url,
+
+        ]);
+        $user_id = Auth::user()->id;
+        $file->file_to_user()->attach($user_id);
+
+        return ['status'=>200];
+    }
+
+    public function checkfiles(Request $request){
+        return 'ok';
     }
 }

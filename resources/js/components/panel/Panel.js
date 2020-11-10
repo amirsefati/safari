@@ -11,6 +11,9 @@ import {Link,Switch,Route, BrowserRouter as Router, Redirect} from 'react-router
 import Panel_register from '../panel_register/Panel_register';
 import Panel_news from '../panel_news/Panel_news';
 import Writing from '../panel_send/Writing';
+import Graphic from '../panel_send/Graphic';
+import Multiemdia from '../panel_send/Multiemdia';
+
 
 const { Header, Content, Footer, Sider } = Layout;
 const { SubMenu } = Menu;
@@ -96,7 +99,10 @@ function Panel(props){
                   <Route path="/panel/register" component={Panel_register}></Route>
                   <Route path="/panel/news" component={Panel_news}></Route>
                   <Route path="/panel/writing" component={Writing}></Route>
+                  <Route path="/panel/graphic" component={Graphic}></Route>
+                  <Route path="/panel/multiemdia" component={Multiemdia}></Route>
 
+                  
               </Switch>
             </div>
           </Content>

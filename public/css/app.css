@@ -30935,3 +30935,8 @@ div.ant-typography-edit-content.ant-typography-rtl {
   right: 90% !important;
 }
 
+.rc-virtual-list-holder-inner {
+  text-align: right !important;
+  font-family: "irsanase" !important;
+}
+

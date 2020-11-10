@@ -8,9 +8,10 @@ import {
     Row,
     Col,
   } from 'antd';
-import { UploadOutlined, InboxOutlined } from '@ant-design/icons';
+import { UploadOutlined,TagOutlined   , InboxOutlined } from '@ant-design/icons';
+import Axios from 'axios';
 
-const { Option } = Select;
+const { Option, OptGroup } = Select;
 
 const formItemLayout = {
   labelCol: { span: 6 },
@@ -28,69 +29,138 @@ const normFile = e => {
 
 
 function Writing(porps){
-    const onFinish = values => {
-        console.log('Received values of form: ', values);
+
+    const [fileList,setfileList] = useState([])
+    const [selectList,setselectList] = useState('')
+    const [inputTitle,setinputTitle] = useState('')
+
+    const [uploading,setUploading] = useState(false)
+
+    
+
+    const handleChangeSelect =(value) =>{
+      setselectList(value)
+    }
+
+    const handleChangeInput = input =>{
+      setinputTitle(input.target.value)
+    }
+
+    const handleUpload = () => {
+      
+        const formData = new FormData();
+        fileList.forEach(file => {
+          formData.append('files[]', file);
+          formData.append('select', selectList);
+          formData.append('input', inputTitle);
+          formData.append('kind', 'نگارشی');
+
+        });
+
+        
+
+        setUploading(true)
+
+        Axios.post('/apiv1/upload_file',formData)
+        .then((res)=>{
+          if(res.status === 200){
+            notification.open({
+              message:'فایل با موفقیت آپلود شد',
+              description:'با تشکر از شما'
+            })
+            setUploading(false)
+          }else{
+            notification.open({
+              message:'خطا',
+              description:'خطا در بارگذاری فایل'
+            })
+            setUploading(false)
+          }
+        })
+      };
+
+      const props = {
+        onRemove: file => {
+            const index = fileList.indexOf(file);
+            const newFileList = fileList.slice();
+            newFileList.splice(index, 1);
+            setfileList(newFileList)
+        },
+        beforeUpload: file => {
+          setfileList([...fileList,file])
+          return false;
+        },
+        fileList,
       };
 
     return(
         <div>
-              <Form
-                name="validate_other"
-                {...formItemLayout}
-                onFinish={onFinish}
-                initialValues={{
-                    ['input-number']: 3,
-                    ['checkbox-group']: ['A', 'B'],
-                    rate: 3.5,
-                }}
-                >
-                <Form.Item label="نوع اثر">
-                    <span className="ant-form-text">نگارشی</span>
-                </Form.Item>
+            <Row>
+              <Col md={3} xs={8}>
+                عنوان اثر
+              </Col>
 
-                <Form.Item
-                    label="عنوان اثر"
-                    name="username"
-                    rules={[
-                        { required: true, message: 'لطفا عنوان اثر را وارد کنید' },
-                    ]}
-                >
-                <Input />
-                </Form.Item>
-                
-                <Form.Item
-                    name="select"
-                    label="محور اثر"
-                    hasFeedback
-                    rules={[{ required: true, message: 'لطفا محور اثر را وارد کنید' }]}
-                >
-                    <Select placeholder="لطفا یک محور را انتخاب کنید">
-                    <Option value="1">نیمه پنهان</Option>
-                    <Option value="2">منطقه زیر زره بین</Option>
-                    <Option value="3">خروش منطقه علیه استکبار</Option>
-                
+              <Col md={16} xs={16}>
+                <Input size="large" placeholder="عنوان اثر" prefix={<TagOutlined   />} onChange={handleChangeInput}/>
+              </Col>
 
-                    </Select>
-                </Form.Item>
+            </Row>
+            <br/>
+            <Row>
+              <Col md={3} xs={8}>
+                 محور اثر
+              </Col>
 
-                <Form.Item label="فایل ها">
-                    <Form.Item name="dragger" valuePropName="fileList" getValueFromEvent={normFile} noStyle>
-                    <Upload.Dragger name="files" action="/upload.do">
-                        <p className="ant-upload-drag-icon">
-                        <InboxOutlined />
-                        </p>
-                        <p className="ant-upload-text">برای آپلود اثر خود کلیک کنید</p>
-                        <p className="ant-upload-hint">میتوانید چندین فایل را آپلود کنید</p>
-                    </Upload.Dragger>
-                    </Form.Item>
-                </Form.Item>
+              <Col md={16} xs={16}>
+                  <Select defaultValue="انتخاب محور اثر" style={{ width: "100%" }} onChange={handleChangeSelect}>
+                    <OptGroup label="نیمه پنهان" >
+                      <Option value="1">جنایات آمریکا در منطقه</Option>
+                      <Option value="2">نفوذ اقتصادی آمریکا در منطقه</Option>
+                      <Option value="3">نفوذ نظامی-امنیتی آمریکا در منطقه</Option>
+                      <Option value="4">راهبرد های آمریکا در منطقه</Option>
 
-                <Form.Item wrapperCol={{ span: 12, offset: 6 }}>
-                    <Button type="primary" htmlType="submit">
-                    ارسال فایل
-                    </Button>
-                </Form.Item>
-                </Form>
+                    </OptGroup>
+                    <OptGroup label="منطقه زیر زره بین">
+                      <Option value="5">تحلیل جریان های آمریکایی و ضد آمریکایی در منطقه</Option>
+                    </OptGroup>
+
+                    <OptGroup label="خروش منطقه علیه استکبار">
+                      <Option value="6">نقش ظرفیت های مردمی در اخراج آمریکا از منطقه</Option>
+                      <Option value="7">راهکار های اقتصادی اخراج آمریکا از منطقه</Option>
+                      <Option value="8">راهکار های نظامی-امنیتی اخراج آمریکا از منطقه</Option>
+                      <Option value="9">راهکار های سیاسی اخراج آمریکا از منطقه</Option>
+
+                    </OptGroup>
+                  </Select>        
+              </Col>
+
+            </Row>
+
+            <br/>
+
+            <Row>
+              <Col md={3} xs={8}>
+                  آپلود اثر
+              </Col>
+
+              <Col md={16} xs={16}>
+                  <Upload {...props}>
+                    <Button icon={<UploadOutlined />}>انتخاب فایل</Button>
+                  </Upload>
+                  <br/>
+                    <Button
+                      type="primary"
+                      onClick={handleUpload}
+                      disabled={fileList.length === 0}
+                      loading={uploading}
+                      style={{ marginTop: 16 }}
+                    >
+                      {uploading ? 'در حال بارگذاری' : 'تایید و آپلود'}
+                    </Button>       
+              </Col>
+
+            </Row>
+             
         </div>
     )
 }

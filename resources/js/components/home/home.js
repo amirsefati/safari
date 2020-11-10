@@ -3,6 +3,7 @@ import {Row , Col , Divider } from 'antd'
 import {Carousel} from 'antd'
 import './home.css'
 import Slider1 from './../images/slider1.png'
+import Banner1 from './../images/banner_1.png'
 
 const contentStyle = {
     height: 'auto',
@@ -28,7 +29,7 @@ function Home(){
 
             </Row> 
 
-            <Row>
+            {/* <Row>
                 <Col span={24} className="row_1">
                     <h2>
                         اولین همایش تخصصی اخراج آمریکا از منطقه
@@ -52,13 +53,12 @@ function Home(){
                 <Col className="panel_name_section_3" md={8} xs={24}>
                 
                 </Col>
-            </Row>
+            </Row> */}
 
             <Row className="first_event">
                 <Col span={24}>
-                    <h2>
-                        اولین رویداد رسانه ای خروش
-                    </h2>
+                    <img src={Banner1} className="home_banner_2"/>
+
                 </Col>
             </Row>
 
@@ -84,8 +84,8 @@ function Home(){
 
 
             <Row>
-                <Col md={12} className="teaser_congre">تیزر همایش</Col>
-                <Col md={12} className="teaser_compet">تیزر مسابقه</Col>
+                <Col md={12} xs={24} className="teaser_congre">تیزر همایش</Col>
+                <Col md={12} xs={24} className="teaser_compet">تیزر مسابقه</Col>
 
             </Row>
 

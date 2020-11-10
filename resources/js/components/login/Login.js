@@ -33,6 +33,11 @@ const Login = (props) => {
                 description:'ورود به سامانه با موفقیت انجام شد'
               });
             History.push('panel')
+        }else{
+            notification.open({
+                message:'خطا',
+                description:'اطلاعات ورود صحیح نیست'
+              });
         }
       })
     };

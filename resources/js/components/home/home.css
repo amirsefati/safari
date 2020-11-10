@@ -29,8 +29,9 @@
 }
 
 .first_event{
-    padding: 70px;
+    padding: 30px;
     text-align: center;
+    
 }
 
 
@@ -64,4 +65,12 @@
     text-align: center;
     background: #F25F5C;
     height: 350px;
+}
+.home_banner_2{
+    width: 45%;
+}
+@media screen and (max-width: 600px){
+    .home_banner_2{
+        width: 85%;
+    }
 }
