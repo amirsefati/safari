@@ -18,7 +18,7 @@ function NavBar(props){
         <div className="top_nav" id="top_nav_id">
 
             <Link to="/" className="top_nav_a"> صفحه اصلی </Link>
-            <Link to="/" className="top_nav_a"> درباره همایش </Link>
+            <Link to="/intro" className="top_nav_a">  معرفی رویداد  </Link>
             <Link to="/" className="top_nav_a"> کادر همایش </Link>
             
             {props.login ? 
@@ -28,7 +28,8 @@ function NavBar(props){
             }
 
 
-            <Link to="/About" className="top_nav_a"> ارتباط با ما </Link>
+            <Link to="/about" className="top_nav_a"> ارتباط با ما </Link>
+
             <span id="toggle_slider"  className="top_nav_icon_mobile">
                 <a onClick={toggle_slider}>
                     منو

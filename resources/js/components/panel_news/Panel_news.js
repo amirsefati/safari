@@ -2,7 +2,7 @@ import React from 'react'
 import { Card } from 'antd';
 import { LinkOutlined , FieldTimeOutlined , FileOutlined } from '@ant-design/icons';
 const { Meta } = Card;
-
+import new1 from './../images/logo_safari.png'
 
 function Panel_news(){
     return(
@@ -11,8 +11,8 @@ function Panel_news(){
                 style={{ width: 300 ,background:"#F5F5F5" }}
                 cover={
                 <img
-                    alt="عنوان"
-                    src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
+                    alt="ارسال آثار"
+                    src={new1}
                 />
                 }
                 actions={[
@@ -22,8 +22,8 @@ function Panel_news(){
                 ]}
             >
                 <Meta
-                title="عنوان"
-                description="توضیحات"
+                title="ارسال آثار"
+                description="مهلت ارسال آثار ۱۶ آذر"
                 />
             </Card>
             

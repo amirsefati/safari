@@ -36,18 +36,32 @@
 
 
 .graphic_section_1{
-    background: #40C9A2;
-    height: 320px;
+    border: 3px solid #E8E8E8;
+    border-radius:8px;
+    padding: 20px;
+    margin:10px;
+    height: 290px;
+    text-align: center;
 }
 
 .graphic_section_2{
-    background: #3E5641;
-    height: 320px;
+    border: 3px solid #E8E8E8;
+    border-radius:8px;
+    padding: 20px;
+    margin:10px;
+    height: 290px;    
+    text-align: center;
+
 }
 
 .graphic_section_3{
-    background: #F4D35E ;
-    height: 320px;
+    border: 3px solid #E8E8E8;
+    border-radius:8px;
+    padding: 20px;
+    margin:10px;
+    height: 290px;
+    text-align: center;
+
 }
 
 .main_idea{
@@ -57,14 +71,10 @@
 
 .teaser_congre{
     text-align: center;
-    background: #CCA43B;
-    height: 350px;
 }
 
 .teaser_compet{
     text-align: center;
-    background: #F25F5C;
-    height: 350px;
 }
 .home_banner_2{
     width: 45%;

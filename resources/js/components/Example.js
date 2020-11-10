@@ -6,6 +6,8 @@ import Signin from './signin/Signin';
 import NavBar from './navbar/Navbar';
 import Home from './home/home'
 import Panel from './panel/Panel';
+import About from './about/About';
+import Intro from './intro/Intro';
 
 import './example.css'
 import Axios from 'axios'
@@ -48,7 +50,10 @@ function Example(){
           <Route  path="/login" render={() => <Login check={checkuser}/>} ></Route>
           <Route  path="/signin" component={() => <Signin check={checkuser}/>}></Route>
           <Route  path="/panel" render={() => <Panel data={user}/>}></Route>
+          <Route  path="/about" component={About}></Route>
+          <Route  path="/intro" component={Intro}></Route>
 
+          
         </Switch>
       </Router>
     </div>
