@@ -11,6 +11,7 @@ import {
   } from 'antd';
 import { UploadOutlined,TagOutlined   , InboxOutlined } from '@ant-design/icons';
 import Axios from 'axios';
+import {Link, useHistory} from 'react-router-dom'
 
 const { Option, OptGroup } = Select;
 
@@ -46,6 +47,7 @@ function Writing(porps){
     const handleChangeInput = input =>{
       setinputTitle(input.target.value)
     }
+    const History = useHistory()
 
     const handleUpload = () => {
       
@@ -70,6 +72,10 @@ function Writing(porps){
               description:'با تشکر از شما'
             })
             setUploading(false)
+            setTimeout(() => {
+              History.push('result')
+
+            }, 3000);
           }else{
             notification.open({
               message:'خطا',

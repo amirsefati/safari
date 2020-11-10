@@ -9,10 +9,15 @@ import Media from './../images/media.png'
 import Text from './../images/text.png'
 import Schedule from './../images/schadule.png'
 import {
+    SendOutlined,
     ContainerOutlined,
     CloudUploadOutlined,
-    CheckCircleOutlined,
+    CheckCircleOutlined
   } from '@ant-design/icons';
+
+import {Link} from 'react-router-dom'
+
+
 const contentStyle = {
     height: 'auto',
     color: '#fff',
@@ -75,34 +80,43 @@ function Home(){
                 <Col className="graphic_section_1" md={6} xs={24}>
                     <img src={Poster} style={{width:"140px"}}/>
                     <div style={{padding:"10px"}}/>
-                    <p style={{fontSize:"16px"}}>ارسال اثر نوشتاری</p>
+                    <p style={{fontSize:"16px"}}> اثر نوشتاری</p>
                     <p style={{fontSize:"12px",color:"gray"}}>یادداشت تخصصی</p>
 
                 </Col>
-
+                <span style={{padding:"5px"}}/>
                 <Col className="graphic_section_2" md={6} xs={24}>
                     <img src={Media} style={{width:"140px"}}/>
                     <div style={{padding:"10px"}}/>
-                    <p style={{fontSize:"16px"}}>ارسال اثر گرافیکی </p>
+                    <p style={{fontSize:"16px"}}> اثر گرافیکی </p>
                     <p style={{fontSize:"12px",color:"gray"}}>پوستر و عکس نوشت</p>
 
                 </Col>
+                <span style={{padding:"5px"}}/>
 
                 <Col className="graphic_section_3" md={6} xs={24}>
                     <img src={Text} style={{width:"140px"}}/>
                     <div style={{padding:"10px"}}/>
-                    <p style={{fontSize:"16px"}}>ارسال اثر ویدئویی</p>
+                    <p style={{fontSize:"16px"}}> اثر ویدئویی</p>
                     <p style={{fontSize:"12px",color:"gray"}}>موشن گرافیک، کلیپ کوتاه،فیلم کوتاه</p>
 
                 </Col>
             </Row>
-
-            {/* <Row className="main_idea">
-                <Col span={24}>
-                    <p>محور های اصلی</p>
-                </Col>
-            </Row> */}
             <br/>
+
+            <Row >
+                <Col span={4}></Col>
+                <Col span={16} className="main_idea">
+                    <Link to="login" style={{color:"black"}}>
+                    <p style={{fontSize:"22px"}}>
+                    <SendOutlined />
+                    <span style={{padding:"5px"}}/>
+                    ارسال اثر
+                    </p>
+                    </Link>
+                </Col>
+            </Row>
+
             <br/>
             <br/>
             <br/>
@@ -117,17 +131,31 @@ function Home(){
                         شرکت در رویداد تخصصی اخراج آمریکا از منطقه
                         </p>
                         <br/>
-                {/* <Row>
+                <Row>
                     <Col md={5} xs={1}></Col>
 
                     <Col md={15} xs={20}>
                     <div style={{textAlign:"right"}}>
+                        <p>به منظور شرکت در رویداد تخصصی اخراج آمریکا از منطقه ابتدا ثبت نام کنید سپس آثار خود را با
+                            توجه به محور های مسابقه تعیین و آپلود کنید
+                            <br/>
+                            پس از تایید و بررسی آثار، نتیجه به شما ابلاغ می شود
+                        </p>
+
                         <p><ContainerOutlined style={{fontSize:"22px"}}/><span style={{padding:"5px"}}></span>ثبت نام در سایت</p>
                         <p><CloudUploadOutlined style={{fontSize:"22px"}}/><span style={{padding:"5px"}}></span>ارسال اثر</p>
                         <p><CheckCircleOutlined style={{fontSize:"22px"}}/><span style={{padding:"5px"}}></span>تایید نهایی</p>
+                        <br/>
+                        <br/>
+                        
+
+                        <p><span style={{padding:"5px"}}></span>📆 مهلت ارسال آثار ۱۶ آذر</p>
+
+                    
+                    
                     </div>
                 </Col>
-                </Row> */}
+                </Row>
 
                 </Col>
 

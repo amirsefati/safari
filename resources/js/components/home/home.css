@@ -39,7 +39,6 @@
     border: 3px solid #E8E8E8;
     border-radius:8px;
     padding: 20px;
-    margin:10px;
     height: 290px;
     text-align: center;
 }
@@ -48,7 +47,6 @@
     border: 3px solid #E8E8E8;
     border-radius:8px;
     padding: 20px;
-    margin:10px;
     height: 290px;    
     text-align: center;
 
@@ -58,7 +56,6 @@
     border: 3px solid #E8E8E8;
     border-radius:8px;
     padding: 20px;
-    margin:10px;
     height: 290px;
     text-align: center;
 
@@ -67,6 +64,7 @@
 .main_idea{
     text-align: center;
     padding: 40px;
+    background: #FFC857;
 }
 
 .teaser_congre{
