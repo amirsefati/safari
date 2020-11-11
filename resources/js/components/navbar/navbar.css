@@ -10,9 +10,17 @@
 .top_nav_icon_mobile{
     display: none;
 }
+.logoin_md{
+    position: absolute;
+    left:30px;
+    top:5px;
+}
 
 @media screen and (max-width: 600px){
     .top_nav a:not(:first-child) {
+        display: none;
+    }
+    .logoin_md{
         display: none;
     }
     

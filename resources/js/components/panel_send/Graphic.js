@@ -62,7 +62,8 @@ function Writing(porps){
 
         
 
-        setUploading(true)
+        if(inputTitle.length > 3 && selectList.length > 5){
+          setUploading(true)
 
         Axios.post('/apiv1/upload_file',formData)
         .then((res)=>{
@@ -84,6 +85,12 @@ function Writing(porps){
             setUploading(false)
           }
         })
+      }else{
+        notification.open({
+          message:'خطا',
+          description:'لطفا فیلد ها را کامل پر کنید'
+        })
+      }
       };
 
       const props = {

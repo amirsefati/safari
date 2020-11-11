@@ -1,6 +1,7 @@
 import React from 'react'
 import './Navbar.css'
 import {Link,Switch,Route, BrowserRouter as Router} from 'react-router-dom'
+import Logo from './../images/logo_menu.png'
 
 function toggle_slider(){
     var x = document.getElementById("top_nav_id")
@@ -22,7 +23,7 @@ function NavBar(props){
             <Link to="/" className="top_nav_a"> کادر همایش </Link>
             
             {props.login ? 
-            <Link to="/panel" className="top_nav_a"> پنل داشبورد </Link>
+            <Link to="/panel/news" className="top_nav_a"> پرتال  </Link>
             :
             <Link to="/Login" className="top_nav_a"> ورود </Link>
             }
@@ -32,9 +33,14 @@ function NavBar(props){
 
             <span id="toggle_slider"  className="top_nav_icon_mobile">
                 <a onClick={toggle_slider}>
-                    منو
+                    <img src={Logo} style={{width:"33px"}}/>
                 </a>
             </span>
+
+            <div className="logoin_md">
+                <img src={Logo} style={{width:"40px"}}/>
+
+            </div>
         </div>
     )
 }

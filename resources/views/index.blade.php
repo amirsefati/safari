@@ -7,11 +7,11 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>کنگره ی ضد آمریکا</title>
+    <title>خروش</title>
 
-    <meta name="description" content="کنگره ی ضد آمریکا">
-    <meta name="keywords" content="خروش, کنگره ی ضد آمریکا">
-    <meta name="author" content="sefati100@gmail.com">
+    <meta name="description" content="خروش (کنگره ی ضد آمریکا)">
+    <meta name="keywords" content="خروش , کنگره ی ضد آمریکا">
+
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
 

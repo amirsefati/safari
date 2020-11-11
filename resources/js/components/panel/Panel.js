@@ -96,8 +96,8 @@ function Panel(props){
           
           <Content style={{ margin: '0 16px' }}>
             <Breadcrumb style={{ margin: '16px 0' }}>
-              <Breadcrumb.Item>پنل داشبورد</Breadcrumb.Item>
-              <Breadcrumb.Item>داشبورد کاربر</Breadcrumb.Item>
+              <Breadcrumb.Item>پنل</Breadcrumb.Item>
+              <Breadcrumb.Item> پنل کاربر</Breadcrumb.Item>
             </Breadcrumb>
             <div className="site-layout-background" style={{ padding: 24, minHeight: 360 }}>
               <Switch>

@@ -1,7 +1,4 @@
-.login_panel{
-    background: #e3e7e6;
-    height: calc(100vh - 63px);
-}
+
 .login_layout{
     background: white;
     min-height: 500px;

@@ -62,7 +62,8 @@ function Writing(porps){
 
         
 
-        setUploading(true)
+        if(inputTitle.length > 3 && selectList.length > 5){
+          setUploading(true)
 
         Axios.post('/apiv1/upload_file',formData)
         .then((res)=>{
@@ -84,8 +85,13 @@ function Writing(porps){
             setUploading(false)
           }
         })
-      };
-
+      }else{
+        notification.open({
+          message:'خطا',
+          description:'لطفا فیلد ها را کامل پر کنید'
+        })
+      }
+    }
       const props = {
         onRemove: file => {
             const index = fileList.indexOf(file);
@@ -176,7 +182,7 @@ function Writing(porps){
                       style={{ marginTop: 16 }}
                     >
                       {uploading ? 'در حال بارگذاری' : 'تایید و آپلود'}
-                    </Button>       
+                    </Button>    
               </Col>
 
             </Row>

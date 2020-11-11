@@ -1,24 +1,27 @@
 .login_panel{
     background: #e3e7e6;
-    height: calc(120vh - 63px);
+    height: 120%;
+    padding-bottom: 50px;
 }
 .signin_layout{
     background: white;
-    min-height: 500px;
-    height: 680px;
+    min-height: 700px;
+    height: 750px;
     margin-top: 50px;
 }
 @media screen and (max-width: 600px){
     .signin_layout{
         background: white;
-        min-height: 500px;
-        height: 940px;
+        min-height: 900px;
+        height: 1100px;
         margin-top: 50px;
     }
 
     .login_panel{
         background: #e3e7e6;
-        height: calc(160vh - 63px);
+        height: 120%;
+        padding-bottom: 50px;
+
     }
 }
 .login_logo{

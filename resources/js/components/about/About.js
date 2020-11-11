@@ -8,6 +8,10 @@ import {
     MailOutlined ,
     MessageOutlined 
   } from '@ant-design/icons';
+import Bale from './../images/bale.png'
+import Telegram from './../images/telegram.png'
+import Instagram from './../images/instagram.png'
+
 function About(){
     return(
     <div>
@@ -57,6 +61,21 @@ function About(){
                 @amtt_admin 
                 </p>
                 </Row>
+
+                <Row>
+                <a href="https://t.me/amtt_admin">
+                    <img src={Telegram} style={{width:"40px",padding:"5px"}}/> 
+                </a>
+                <a  href="https://instagram.com/amtt_admin">
+                    <img src={Instagram} style={{width:"40px",padding:"5px"}}/> 
+                </a>
+
+                <a  href="https://web.bale.ai/amtt_admin">
+                    <img src={Bale} style={{width:"40px",padding:"5px"}}/> 
+                </a>
+
+                </Row>
+
 
             </Col>
             <Col md={1} xs={0}></Col>

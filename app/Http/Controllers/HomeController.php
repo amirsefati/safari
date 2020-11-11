@@ -54,6 +54,7 @@ class HomeController extends Controller
             'born' => $data['born'],
             'university' => $data['university'],
             'password' => $data['password'],
+            'etc' => $data['activity']
 
         ]);
         Auth::loginUsingId($user->id);
@@ -75,21 +76,24 @@ class HomeController extends Controller
         $files = $request['files'];
         $kind = $request['kind'];
         
-            $image = $files[0];
-            $name = time().'.'.$image->getClientOriginalExtension();
-            $destinationPath = public_path('/files/');
-            $image->move($destinationPath, $name);
-            $url = '/files/' . $name ;
-
+            $urls = [];
+            foreach($files as $image){
+                $name = Auth::user()->email.'-'.time().'.'.$image->getClientOriginalExtension();
+                $destinationPath = public_path('/files/');
+                $image->move($destinationPath, $name);
+                $url = '/files/' . $name ;
+                array_push($urls,$url);
+            }
+            
+            
 
         $file = File::create([
             'title' => $input,
             'axis' => $select,
             'kind' => $kind,
-            'files' => $url,
+            'files' => json_encode($urls),
             'status' => 'در حال بررسی',
-            'etc1' => rand(25000,900000)
-
+            'etc1' => rand(25000,900000),
         ]);
         $user_id = Auth::user()->id;
         $file->file_to_user()->attach($user_id);

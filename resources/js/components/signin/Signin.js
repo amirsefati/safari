@@ -118,8 +118,8 @@ const Signin = (props) => {
                         </Row>
 
                         <Row className="login_login">
-                            <Col md={7} xs={1}></Col>
-                            <Col md={10} xs={22}>
+                            <Col md={4} xs={1}></Col>
+                            <Col md={14} xs={22}>
                             <Form
       {...formItemLayout}
       form={form}
@@ -234,7 +234,12 @@ const Signin = (props) => {
           <Input />
       </Form.Item>
 
-      
+      <Form.Item
+        name="activity"
+        label="نام تشکل و مجموعه فعالیت"
+      >        
+          <Input />
+      </Form.Item>
       
       <Form.Item
         name="agreement"
