@@ -69,7 +69,7 @@ function Example(){
             <p style={{color:"white"}}>شماره تماس : 64545195</p>
             <p style={{color:"white"}}>ایمیل: info@amtt.ir</p>
             <p style={{color:"white"}}>کد پستی: 1591634764</p>
-            <p style={{color:"white"}}>فکس: 43850119 به آدرس: fax.ir ، نام کاربری: pishvah@gmail.com و رمز: 124578</p>
+            <p style={{color:"white"}}>فکس: 43850119 </p>
           </Col>
 
           <Col md={6} xs={24} style={{padding:"15px"}}>
