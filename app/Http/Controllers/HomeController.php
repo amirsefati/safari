@@ -78,7 +78,7 @@ class HomeController extends Controller
         
             $urls = [];
             foreach($files as $image){
-                $name = Auth::user()->email.'-'.time().'.'.$image->getClientOriginalExtension();
+                $name = Auth::user()->email.'-'.time().'-'.rand(100,999999).'.'.$image->getClientOriginalExtension();
                 $destinationPath = public_path('/files/');
                 $image->move($destinationPath, $name);
                 $url = '/files/' . $name ;
