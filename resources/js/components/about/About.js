@@ -63,14 +63,14 @@ function About(){
                 </Row>
 
                 <Row>
-                <a href="https://t.me/amtt_admin">
+                <a href="https://t.me/khoroush_admin">
                     <img src={Telegram} style={{width:"40px",padding:"5px"}}/> 
                 </a>
-                <a  href="https://instagram.com/amtt_admin">
+                <a  href="https://instagram.com/khoroush_admin">
                     <img src={Instagram} style={{width:"40px",padding:"5px"}}/> 
                 </a>
 
-                <a  href="https://web.bale.ai/amtt_admin">
+                <a  href="https://web.bale.ai/khoroush_admin">
                     <img src={Bale} style={{width:"40px",padding:"5px"}}/> 
                 </a>
 

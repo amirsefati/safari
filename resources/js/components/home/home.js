@@ -3,6 +3,8 @@ import {Row , Col , Divider } from 'antd'
 import {Carousel} from 'antd'
 import './home.css'
 import Slider1 from './../images/slider1.png'
+import Slider2 from './../images/silder2.png'
+
 import Banner1 from './../images/banner_1.png'
 import Poster from './../images/poster.png'
 import Media from './../images/media.png'
@@ -35,8 +37,9 @@ function Home(){
                         <div style={contentStyle}>
                             <img src={Slider1} style={{width:"100%"}}/>
                         </div>
-                       
-                        
+                        <div style={contentStyle}>
+                            <img src={Slider2} style={{width:"100%"}}/>
+                        </div>
                     </Carousel>
                 </Col>
 
@@ -78,7 +81,7 @@ function Home(){
             <Row className="graphic">
                 <Col md={3} xs={0}></Col>
                 <Col className="graphic_section_1" md={6} xs={24}>
-                    <img src={Poster} style={{width:"140px"}}/>
+                    <img src={Text} style={{width:"140px"}}/>
                     <div style={{padding:"10px"}}/>
                     <p style={{fontSize:"16px"}}> اثر نوشتاری</p>
                     <p style={{fontSize:"12px",color:"gray"}}>یادداشت تخصصی</p>
@@ -86,7 +89,7 @@ function Home(){
                 </Col>
                 <span style={{padding:"5px"}}/>
                 <Col className="graphic_section_2" md={6} xs={24}>
-                    <img src={Media} style={{width:"140px"}}/>
+                    <img src={Poster} style={{width:"140px"}}/>
                     <div style={{padding:"10px"}}/>
                     <p style={{fontSize:"16px"}}> اثر گرافیکی </p>
                     <p style={{fontSize:"12px",color:"gray"}}>پوستر و عکس نوشت</p>
@@ -95,13 +98,14 @@ function Home(){
                 <span style={{padding:"5px"}}/>
 
                 <Col className="graphic_section_3" md={6} xs={24}>
-                    <img src={Text} style={{width:"140px"}}/>
+                    <img src={Media} style={{width:"140px"}}/>
                     <div style={{padding:"10px"}}/>
                     <p style={{fontSize:"16px"}}> اثر ویدئویی</p>
                     <p style={{fontSize:"12px",color:"gray"}}>موشن گرافیک، کلیپ کوتاه،فیلم کوتاه</p>
 
                 </Col>
             </Row>
+            <br/>
             <br/>
 
             <Row >
@@ -113,6 +117,7 @@ function Home(){
                     <span style={{padding:"5px"}}/>
                     ارسال اثر
                     </p>
+                    <p>برای ارسال ایده های خود ابتدا وارد سایت شوید</p>
                     </Link>
                 </Col>
             </Row>
@@ -123,7 +128,7 @@ function Home(){
 
             <Row>
                 <Col md={12} xs={24} className="teaser_congre">
-                    <img src={Schedule} style={{width:"100%",borderRadius:"20px 0px 0px 20px"}}/>
+                    <img src={Schedule} style={{width:"100%"}}/>
                 </Col>
                 <Col md={12} xs={24} className="teaser_compet"> 
 
@@ -132,9 +137,9 @@ function Home(){
                         </p>
                         <br/>
                 <Row>
-                    <Col md={5} xs={1}></Col>
+                    <Col md={3} xs={1}></Col>
 
-                    <Col md={15} xs={20}>
+                    <Col md={20} xs={20}>
                     <div style={{textAlign:"right"}}>
                         <p>به منظور شرکت در رویداد تخصصی اخراج آمریکا از منطقه ابتدا ثبت نام کنید سپس آثار خود را با
                             توجه به محور های مسابقه تعیین و آپلود کنید
@@ -160,11 +165,7 @@ function Home(){
                 </Col>
 
             </Row>
-            
-            <br/>
-            <br/>
-            <br/>
-            <br/>
+           
         </div>
     )
 }
