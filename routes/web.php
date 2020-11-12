@@ -38,4 +38,23 @@ Route::post('/apiv1/checkfiles', [HomeController::class,'checkfiles']);
 
 Route::post('/apiv1/get_media', [HomeController::class,'get_media']);
 
+Route::get('/apiv1/get_news', [HomeController::class,'get_news']);
+
+
+
 Route::get('/apiv1/logout', [HomeController::class,'logout']);
+
+Route::get('/manager/safari', [HomeController::class,'safari']);
+Route::post('/manager/safari/action_on_filesdt', [HomeController::class,'action_on_filesdt']);
+
+Route::get('/manager/safari/alluser', [HomeController::class,'alluser']);
+
+Route::get('/manager/safari/addnews', [HomeController::class,'addnews']);
+
+Route::post('/manager/safari/addnews', [HomeController::class,'addnews_post']);
+
+
+Route::get('/manager/safari/news_dl/{id}', [HomeController::class,'news_dl']);
+
+Route::get('/manager/safari/all_safari', [HomeController::class,'all_safari']);
+

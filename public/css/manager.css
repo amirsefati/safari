@@ -1,0 +1,8 @@
+.container-fluid{
+    direction: rtl!important;
+    text-align: right!important;
+    font-family: 'Vazir';
+}
+.table-bordered>thead>tr>td, .table-bordered>thead>tr>th{
+    text-align: right;
+}

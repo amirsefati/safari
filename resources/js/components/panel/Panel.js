@@ -79,10 +79,10 @@ function Panel(props){
             &nbsp; نتایج</Link>
             </Menu.Item>
 
-            <Menu.Item key="10" icon={<PieChartOutlined />}>
+            {/* <Menu.Item key="10" icon={<PieChartOutlined />}>
               <Link to="/panel/settings">
              &nbsp;  تنظمیات کاربری</Link>
-            </Menu.Item>
+            </Menu.Item> */}
 
             <Menu.Item key="11" icon={<PieChartOutlined />} onClick={logout}>
              &nbsp;  خروج
