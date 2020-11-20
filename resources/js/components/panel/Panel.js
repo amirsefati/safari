@@ -92,6 +92,9 @@ function Panel(props){
         <Layout className="site-layout">
           <Header className="site-layout-background" style={{ padding: 0 }} >
             <span style={{padding:"2px 15px"}}> کاربر : {props.data['name']}</span>
+            {props.data['email'] == 'safari@gmail.com' 
+            ? <a href="/manager/safari/alluser">  - پنل </a>
+            : ''}
           </Header>
           
           <Content style={{ margin: '0 16px' }}>

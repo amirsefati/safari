@@ -1,19 +1,22 @@
 .top_nav_a{
-    margin: 10px 15px 15px 10px;
+    margin: 10px;
     color: white;
 }
 .top_nav{
-    padding: 20px;
+    padding: 24px;
     background: #046b7c;
     overflow: hidden;
 }
 .top_nav_icon_mobile{
     display: none;
 }
+.top_nav_icon_mobile_2{
+    display: none;
+}
 .logoin_md{
     position: absolute;
     left:30px;
-    top:5px;
+    top:3px;
 }
 
 @media screen and (max-width: 600px){
@@ -28,8 +31,17 @@
         display: block;
         text-align: left;
         position: absolute;
-        left: 35px;
-        top: 12px;
+        left: 37%;
+        top: 10px;
+        color: wheat;
+        font-size: 24px;
+    }
+    .top_nav_icon_mobile_2{
+        display: block;
+        text-align: left;
+        position: absolute;
+        left: 5%;
+        top: 15px;
         color: wheat;
         font-size: 24px;
     }

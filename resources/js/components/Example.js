@@ -84,8 +84,8 @@ function Example(){
             <p style={{color:"white"}}> پیوند ها</p> 
             <hr className="hr_style"/>
             <div style={{padding:"5px"}}></div>
-            <p ><a style={{color:"white"}} href="https://aut.ac.ir">دانشگاه امیرکبیر</a></p>
-            <p ><a style={{color:"white"}} href="http://amtt.ir">اندیشکده</a></p>
+            <p ><a style={{color:"white"}} href="https://aut.ac.ir">دانشگاه صنعتی امیرکبیر</a></p>
+            <p ><a style={{color:"white"}} href="http://amtt.ir">اندیشکده سیاست گذاری امیرکبیر </a></p>
 
           </Col>
         </Row>

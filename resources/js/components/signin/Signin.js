@@ -237,6 +237,8 @@ const Signin = (props) => {
       <Form.Item
         name="activity"
         label="نام تشکل و مجموعه فعالیت"
+        rules={[{ required: true, message: 'لطفا  نام تشکل خود را وارد کنید' }]}
+
       >        
           <Input />
       </Form.Item>
