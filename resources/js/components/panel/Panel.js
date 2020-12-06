@@ -13,6 +13,8 @@ import Panel_news from '../panel_news/Panel_news';
 import Writing from '../panel_send/Writing';
 import Graphic from '../panel_send/Graphic';
 import Multiemdia from '../panel_send/Multiemdia';
+import Special from '../panel_send/special';
+
 import Result from '../panel_result/Result'
 import Axios from 'axios';
 
@@ -73,6 +75,8 @@ function Panel(props){
               <Menu.Item key="3"><Link to="/panel/writing">نگارشی</Link></Menu.Item>
               <Menu.Item key="4"><Link to="/panel/graphic">گرافیک</Link></Menu.Item>
               <Menu.Item key="5"><Link to="/panel/multiemdia">مالتی مدیا</Link></Menu.Item>
+              <Menu.Item key="6"><Link to="/panel/special">بخش ویژه همایش</Link></Menu.Item>
+
             </SubMenu>
             <Menu.Item key="9" icon={<FileOutlined />}>
               <Link to="/panel/result">
@@ -109,6 +113,8 @@ function Panel(props){
                   <Route path="/panel/writing" component={Writing}></Route>
                   <Route path="/panel/graphic" component={Graphic}></Route>
                   <Route path="/panel/multiemdia" component={Multiemdia}></Route>
+                  <Route path="/panel/special" component={Special}></Route>
+
                   <Route path="/panel/result" component={Result}></Route>
 
                   

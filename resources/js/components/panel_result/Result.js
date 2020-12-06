@@ -28,7 +28,7 @@ function Result(){
             title: 'عملیات',
             dataIndex: 'etc1',
             key: 'etc1',
-            render: etc1 => <a href={"/apiv1/delete/"+etc1}>حذف</a>,
+            render: etc1 => <p href={"/apiv1/delete/"+etc1}></p>,
 
         },
           
@@ -47,9 +47,10 @@ function Result(){
     },[])
 
     return(
-        <div>
+        <div >
+            <div style={{overflowX:'auto'}}>
             <Table columns={columns} dataSource={files}/>
-
+            </div>
         </div>
     )
 }

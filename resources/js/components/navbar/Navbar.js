@@ -12,25 +12,29 @@ function toggle_slider(){
         x.className = "top_nav"
     }
 }
+function close_menu(){
+    var x = document.getElementById("top_nav_id")
+    x.className = "top_nav"
 
+}
 
 function NavBar(props){ 
     
     return(
         <div className="top_nav" id="top_nav_id">
 
-            <Link to="/" className="top_nav_a"> صفحه اصلی </Link>
-            <Link to="/intro" className="top_nav_a">  معرفی رویداد  </Link>
-            <Link to="/" className="top_nav_a"> کادر همایش </Link>
+            <Link to="/" className="top_nav_a" onClick={close_menu}> صفحه اصلی </Link>
+            <Link to="/intro" className="top_nav_a" onClick={close_menu}>  معرفی رویداد  </Link>
+            <Link to="/" className="top_nav_a" onClick={close_menu}> کادر همایش </Link>
             
             {props.login ? 
-            <Link to="/panel/news" className="top_nav_a"> پرتال  </Link>
+            <Link to="/panel/news" className="top_nav_a" onClick={close_menu}> پرتال  </Link>
             :
-            <Link to="/Login" className="top_nav_a"> ورود </Link>
+            <Link to="/Login" className="top_nav_a" onClick={close_menu}> ورود </Link>
             }
 
 
-            <Link to="/about" className="top_nav_a"> ارتباط با ما </Link>
+            <Link to="/about" className="top_nav_a" onClick={close_menu}> ارتباط با ما </Link>
 
 
 

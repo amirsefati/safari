@@ -9,6 +9,9 @@ import Poster from './../images/poster.png'
 import Media from './../images/media.png'
 import Text from './../images/text.png'
 import Schedule from './../images/schadule.png'
+import Schedule2 from './../images/aaa.jpg'
+
+
 import {
     SendOutlined,
     ContainerOutlined,
@@ -103,35 +106,8 @@ function Home(){
                 </Col>
                 <Col md={12} xs={24} className="teaser_compet"> 
 
-                        <p style={{fontSize:"18px",fontWeight:'bold'}}>
-                        شرکت در رویداد تخصصی اخراج آمریکا از منطقه
-                        </p>
-                        <br/>
-                <Row>
-                    <Col md={3} xs={1}></Col>
+                <img src={Schedule2} style={{width:"100%"}}/>
 
-                    <Col md={20} xs={20}>
-                    <div style={{textAlign:"right"}}>
-                        <p>به منظور شرکت در رویداد تخصصی اخراج آمریکا از منطقه ابتدا ثبت نام کنید سپس آثار خود را با
-                            توجه به محور های مسابقه تعیین و آپلود کنید
-                            <br/>
-                            پس از تایید و بررسی آثار، نتیجه به شما ابلاغ می شود
-                        </p>
-
-                        <p><ContainerOutlined style={{fontSize:"22px"}}/><span style={{padding:"5px"}}></span>ثبت نام در سایت</p>
-                        <p><CloudUploadOutlined style={{fontSize:"22px"}}/><span style={{padding:"5px"}}></span>ارسال اثر</p>
-                        <p><CheckCircleOutlined style={{fontSize:"22px"}}/><span style={{padding:"5px"}}></span>تایید نهایی</p>
-                        <br/>
-                        <br/>
-                        
-
-                        <p><span style={{padding:"5px"}}></span>📆 مهلت ارسال آثار ۱۶ آذر</p>
-
-                    
-                    
-                    </div>
-                </Col>
-                </Row>
 
                 </Col>
 
