@@ -8,6 +8,8 @@ import Home from './home/home'
 import Panel from './panel/Panel';
 import About from './about/About';
 import Intro from './intro/Intro';
+import Team from './team/Team';
+
 import {Row,Col} from 'antd'
 import './example.css'
 import Axios from 'axios'
@@ -54,8 +56,8 @@ function Example(){
           <Route  path="/panel" render={() => <Panel data={user} check={checkuser}/>}></Route>
           <Route  path="/about" component={About}></Route>
           <Route  path="/intro" component={Intro}></Route>
+          <Route  path="/team" component={Team}></Route>
 
-          
         </Switch>
       </Router>
 

@@ -15,11 +15,14 @@ import Instagram from './../images/instagram.png'
 function About(){
     return(
     <div>
-        <Card title="ارتباط با ما" bordered={false}>
+        <Row>
+            <Col md={4} xs={1}></Col>
+            <Col md={16} xs={22}>
+        <Card title="ارتباط با ما" bordered={false} style={{background:"#F9F9F9"}}>
 
         <Row>
-            <Col span={4}></Col>
-            <Col span={16}>
+            <Col md={2} xs={1}></Col>
+            <Col md={20} xs={22}>
                 <br/>
                 <br/>
             <iframe src={"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1619.9845717689648!2d51.40867642238381!3d35.702376929376015!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f8e017355f8f711%3A0x529be24006d33fe7!2zMzXCsDQyJzA2LjkiTiA1McKwMjQnMzYuOSJF!5e0!3m2!1sen!2s!4v1605006547351!5m2!1sen!2s"}  style={{border:0,width:"100%",height:"400px"}}></iframe>
@@ -30,8 +33,8 @@ function About(){
             <br/>
 
         <Row>
-            <Col md={4} xs={0}></Col>
-            <Col md={5} xs={24} style={{padding:"10px"}}>
+            <Col md={1} xs={1}></Col>
+            <Col md={8} xs={24} style={{padding:"10px"}}>
                 <br/>
                 <Row>
                     <p>
@@ -110,6 +113,8 @@ function About(){
         <br/>
         <br/>
         </Card>
+        </Col>
+        </Row>
     </div>
     )
 }

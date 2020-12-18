@@ -36,34 +36,15 @@
 
 
 .graphic_section_1{
-    border: 3px solid #E8E8E8;
+    border: 1px solid #E8E8E8;
     border-radius:8px;
-    padding: 20px;
-    height: 290px;
+    padding: 5px;
     text-align: center;
-}
-
-.graphic_section_2{
-    border: 3px solid #E8E8E8;
-    border-radius:8px;
-    padding: 20px;
-    height: 290px;    
-    text-align: center;
-
-}
-
-.graphic_section_3{
-    border: 3px solid #E8E8E8;
-    border-radius:8px;
-    padding: 20px;
-    height: 290px;
-    text-align: center;
-
 }
 
 .main_idea{
     text-align: center;
-    padding: 40px;
+    padding: 20px;
     background: #FFC857;
     border-radius: 5px;
 }
