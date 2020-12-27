@@ -98,9 +98,10 @@ class HomeController extends Controller
         $Description = 'ثبت نام در رویداد خروش'; // Required
         $Email = Auth::user()->email; // Optional
         $Mobile = Auth::user()->email; // Optional
-        $CallbackURL = 'http://counteramericacongress.com/check_pay/check_user'; // Required
+        //$CallbackURL = 'http://counteramericacongress.com/check_pay/check_user'; // Required
+        $CallbackURL = 'http://localhost:8000/check_pay/check_user'; // Required
 
-
+        
         $client = new SoapClient('https://www.zarinpal.com/pg/services/WebGate/wsdl', ['encoding' => 'UTF-8']);
 
         $result = $client->PaymentRequest(
@@ -149,13 +150,19 @@ class HomeController extends Controller
         );
 
         if ($result->Status == 100) {
-        echo 'Transation success. RefID:'.$result->RefID;
+            $e = 'ok';
+            $data = $result->RefID;
+            return view('after_pay',compact(['e','data']));
         } else {
         echo 'Transation failed. Status:'.$result->Status;
+            $e = 'no';
+            $data = $result->Status;
+            return view('after_pay',compact(['e','data']));
         }
         } else {
-        echo 'Transaction canceled by user';
-        }
+            $e = 'cancel';
+            $data = '';
+            return view('after_pay',compact(['e','data']));        }
     }
     public function upload_file(Request $request){
         $input = $request['input'];
