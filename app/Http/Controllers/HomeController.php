@@ -86,6 +86,9 @@ class HomeController extends Controller
     }
 
     public function pay_andresrve(Request $request){
+        if(Payment::where('user_id',Auth::user()->id)->first()->status == 0){
+
+        
         $price = 4000;
         if($request->data['code'] == 'khoroush'){
             if(Auth::user()->picture == 'Khoroush'){
@@ -97,9 +100,9 @@ class HomeController extends Controller
         $Amount = $price; //Amount will be based on Toman - Required
         $Description = 'ثبت نام در رویداد خروش'; // Required
         $Email = Auth::user()->email; // Optional
-        $Mobile = Auth::user()->email; // Optional
-        $CallbackURL = 'http://counteramericacongress.com/check_pay/check_user'; // Required
-        //$CallbackURL = 'http://localhost:8000/check_pay/check_user'; // Required
+        $Mobile = Auth::user()->phone; // Optional
+        //$CallbackURL = 'http://counteramericacongress.com/check_pay/check_user'; // Required
+        $CallbackURL = 'http://localhost:8000/check_pay/check_user'; // Required
 
         
         $client = new SoapClient('https://www.zarinpal.com/pg/services/WebGate/wsdl', ['encoding' => 'UTF-8']);
@@ -128,7 +131,7 @@ class HomeController extends Controller
             return $url;
         }
 
-
+    }
     }
 
     public function after_pay(Request $request){
@@ -136,7 +139,7 @@ class HomeController extends Controller
         $MerchantID = 'b3716ce1-e91d-46e5-9df8-91a4d26160f3';
         $Amount = $pay_detail->price; //Amount will be based on Toman
         $Authority = $request->Authority;
-        if ($request->Status == 'OK') {
+        if($request->Status == 'OK') {
 
         $client = new SoapClient('https://www.zarinpal.com/pg/services/WebGate/wsdl', ['encoding' => 'UTF-8']);
 
@@ -171,6 +174,7 @@ class HomeController extends Controller
             return view('after_pay',compact(['e','data'])); 
         }
     }
+
     public function upload_file(Request $request){
         $input = $request['input'];
         $select = $request['select'];
