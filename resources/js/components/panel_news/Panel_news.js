@@ -3,6 +3,7 @@ import { Card,Row,Col } from 'antd';
 const { Meta } = Card;
 import new1 from './../images/logo_safari.png'
 import Axios from 'axios';
+import {Link, BrowserRouter as Router} from 'react-router-dom'
 
 function Panel_news(){
 
@@ -19,6 +20,8 @@ function Panel_news(){
             <Row>
                 {news.map((number) => 
                 <Col md={6} xs ={24} key={number.id} style={{padding:"10px"}}>
+                    <Link to="/panel/payment"> 
+
                         <Card
                         style={{ width:"100%" ,background:"#F5F5F5" }}
                         cover={
@@ -36,6 +39,7 @@ function Panel_news(){
                         <br/>
                         <br/>
                     </Card>
+                    </Link>
                 </Col>
                 )}
             </Row>
