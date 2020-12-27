@@ -137,7 +137,7 @@ class HomeController extends Controller
         $Amount = $pay_detail->price; //Amount will be based on Toman
         $Authority = $request->Authority;
 
-        if ($_GET['Status'] == 'OK') {
+        if ($request->Status == 'OK') {
 
         $client = new SoapClient('https://www.zarinpal.com/pg/services/WebGate/wsdl', ['encoding' => 'UTF-8']);
 
