@@ -131,7 +131,7 @@ class HomeController extends Controller
 
     }
 
-    public function after_pay($autho){
+    public function after_pay($autho,$stat){
         $pay_detail = Payment::where('user_id',Auth::user()->id)->first();
         $MerchantID = 'b3716ce1-e91d-46e5-9df8-91a4d26160f3';
         $Amount = $pay_detail->price; //Amount will be based on Toman
