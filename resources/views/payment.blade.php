@@ -29,7 +29,7 @@
                     <td>{{$pay->price}}</td>
                     <td>{{App\Models\User::where('id',$pay->user_id)->first()->name}}</td>
                     <td>{{$pay->status}}</td>
-                    <td>{{$pay->redid}}</td>
+                    <td>{{$pay->ref_id}}</td>
 
                 </tr>
             @endforeach
