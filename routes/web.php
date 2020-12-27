@@ -46,7 +46,7 @@ Route::post('/apiv1/pay_andresrve', [HomeController::class,'pay_andresrve']);
 
 Route::get('/payment/goto_may_user', [HomeController::class,'goto_may_user']);
 
-Route::get('/check_pay/check_user/{data}', [HomeController::class,'after_pay']);
+Route::get('/check_pay/check_user/{data}{data2}', [HomeController::class,'after_pay']);
 
 
 Route::get('/apiv1/logout', [HomeController::class,'logout']);
