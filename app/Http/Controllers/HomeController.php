@@ -150,10 +150,17 @@ class HomeController extends Controller
         );
 
         if ($result->Status == 100) {
+            
+            Payment::where('id',$pay_detail->id)->update([
+                'status' => 1,
+                'ref_id' => $result->RefID
+            ]);
             $e = 'ok';
             $data = $result->RefID;
             return view('after_pay',compact(['e','data']));
-        } else {
+
+        } 
+        else{
         echo 'Transation failed. Status:'.$result->Status;
             $e = 'no';
             $data = $result->Status;
@@ -162,7 +169,8 @@ class HomeController extends Controller
         } else {
             $e = 'cancel';
             $data = '';
-            return view('after_pay',compact(['e','data']));        }
+            return view('after_pay',compact(['e','data'])); 
+        }
     }
     public function upload_file(Request $request){
         $input = $request['input'];
@@ -287,5 +295,11 @@ class HomeController extends Controller
             'picture' => $code
         ]);
         return redirect('/manager/safari/email');
+    }
+
+
+    public function pay(){
+        $pays = Payment::all();
+        return view('payment',compact('pays'));
     }
 }

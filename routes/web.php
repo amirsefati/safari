@@ -68,3 +68,5 @@ Route::get('/manager/safari/all_safari', [HomeController::class,'all_safari']);
 Route::get('/manager/safari/email', [HomeController::class,'email']);
 Route::get('/manager/safari/generate_code/{id}', [HomeController::class,'generate_code']);
 Route::get('/manager/safari/dl_generate_code/{id}', [HomeController::class,'dl_generate_code']);
+
+Route::get('/manager/safari/pay', [HomeController::class,'pay']);

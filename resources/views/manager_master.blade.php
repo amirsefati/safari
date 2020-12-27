@@ -36,6 +36,8 @@
     </div>
     <div class="collapse navbar-collapse navbar-right" id="myNavbar">
       <ul class="nav navbar-nav">
+            <li class="{{basename(url()->current()) == 'pay' ? 'active' : ''}}"><a href="/manager/safari/pay"> پرداختی ها</a></li>
+
             <li class="{{basename(url()->current()) == 'email' ? 'active' : ''}}"><a href="/manager/safari/email"> ایمیل</a></li>
             <li class="{{basename(url()->current()) == 'all_safari' ? 'active' : ''}}"><a href="/manager/safari/all_safari">انباری</a></li>
             <li class="{{basename(url()->current()) == 'addnews' ? 'active' : ''}}"><a href="/manager/safari/addnews">افزودن خبر</a></li>
