@@ -136,7 +136,6 @@ class HomeController extends Controller
         $MerchantID = 'b3716ce1-e91d-46e5-9df8-91a4d26160f3';
         $Amount = $pay_detail->price; //Amount will be based on Toman
         $Authority = $request->Authority;
-
         if ($request->Status == 'OK') {
 
         $client = new SoapClient('https://www.zarinpal.com/pg/services/WebGate/wsdl', ['encoding' => 'UTF-8']);
@@ -161,7 +160,7 @@ class HomeController extends Controller
 
         } 
         else{
-        echo 'Transation failed. Status:'.$result->Status;
+
             $e = 'no';
             $data = $result->Status;
             return view('after_pay',compact(['e','data']));

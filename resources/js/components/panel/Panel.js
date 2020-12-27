@@ -86,7 +86,7 @@ function Panel(props){
 
             <Menu.Item key="10" icon={<FileOutlined />}>
               <Link to="/panel/payment">
-            &nbsp; ثبت نام در رویداد</Link>
+            &nbsp; ثبت نام در همایش</Link>
             </Menu.Item>
 
             {/* <Menu.Item key="10" icon={<PieChartOutlined />}>

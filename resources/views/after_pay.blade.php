@@ -43,6 +43,24 @@
 @elseif($e == 'no')
 
 
+<div class="row" style="margin-top: 40px;">
+    <div class="col-md-2">
+        
+    </div>
+
+    <div class="col-md-8" style="text-align:center;background:#DB5461">
+        <p style="color:white;padding:30px"> اطلاعات پرداخت همخوانی ندارد با پشتیبانی تماس بگیرید</p>
+        <p style="color:white;padding:10px;font-size:10px">بعد از لحطه به سایت منتقل خواهید شد</p>
+
+        <script>
+        setTimeout(() => {
+            window.location = "/panel";
+
+        }, 3000);
+        </script>
+    </div>
+</div>
+
 
 
 @else
