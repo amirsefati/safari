@@ -44,6 +44,9 @@ Route::get('/apiv1/payment_user_verify', [HomeController::class,'payment_user_ve
 
 Route::post('/apiv1/pay_andresrve', [HomeController::class,'pay_andresrve']);
 
+Route::get('/payment/goto_may_user', [HomeController::class,'goto_may_user']);
+
+Route::get('/check_pay/check_user', [HomeController::class,'after_pay']);
 
 
 Route::get('/apiv1/logout', [HomeController::class,'logout']);

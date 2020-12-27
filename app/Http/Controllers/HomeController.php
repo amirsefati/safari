@@ -6,6 +6,7 @@ use PDO;
 use SoapClient;
 use App\Models\File;
 use App\Models\News;
+use App\Models\Payment;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -85,10 +86,10 @@ class HomeController extends Controller
     }
 
     public function pay_andresrve(Request $request){
-        $price = 40000;
+        $price = 4000;
         if($request->data['code'] == 'khoroush'){
             if(Auth::user()->picture == 'Khoroush'){
-                $price = 20000;
+                $price = 2000;
             }
         }
         
@@ -97,7 +98,7 @@ class HomeController extends Controller
         $Description = 'ثبت نام در رویداد خروش'; // Required
         $Email = Auth::user()->email; // Optional
         $Mobile = Auth::user()->email; // Optional
-        $CallbackURL = 'http://localhost:8000/panel/verify_payment'; // Required
+        $CallbackURL = 'http://localhost:8000/check_pay/check_user'; // Required
 
 
         $client = new SoapClient('https://www.zarinpal.com/pg/services/WebGate/wsdl', ['encoding' => 'UTF-8']);
@@ -113,14 +114,48 @@ class HomeController extends Controller
         ]
         );
 
-        //Redirect to URL You can do it also by creating a form
         if ($result->Status == 100) {
-           
-            return redirect('https://www.zarinpal.com/pg/StartPay/'.$result->Authority);
+            Payment::updateOrCreate(
+             ['user_id' => Auth::user()->id]   
+            ,[
+                'meri_code' => $result->Authority,
+                'price' => $Amount,
+                'user_id' => Auth::user()->id,
+            ]);
 
+            $url = "https://www.zarinpal.com/pg/StartPay/" . $result->Authority;
+            return $url;
         }
 
 
+    }
+
+    public function after_pay(){
+        $pay_detail = Payment::where('user_id',Auth::user()->id)->first();
+        $MerchantID = 'b3716ce1-e91d-46e5-9df8-91a4d26160f3';
+        $Amount = $pay_detail->price; //Amount will be based on Toman
+        $Authority = $_GET['Authority'];
+
+        if ($_GET['Status'] == 'OK') {
+
+        $client = new SoapClient('https://www.zarinpal.com/pg/services/WebGate/wsdl', ['encoding' => 'UTF-8']);
+
+        $result = $client->PaymentVerification(
+        [
+        'MerchantID' => $MerchantID,
+        'Authority' => $Authority,
+        'Amount' => $Amount,
+        ]
+        );
+
+        if ($result->Status == 100) {
+        echo 'Transation success. RefID:'.$result->RefID;
+        } else {
+        echo 'Transation failed. Status:'.$result->Status;
+        }
+        } else {
+        echo 'Transaction canceled by user';
+        }
     }
     public function upload_file(Request $request){
         $input = $request['input'];

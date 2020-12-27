@@ -44,7 +44,7 @@ function Payment(){
             Axios.post('/apiv1/pay_andresrve',{
                 data : {'select_item' : selectList , 'code' : code}
             }).then((res)=>{
-                console.log(res.data)
+                window.location.replace(res.data);
             })
         }
         
