@@ -86,9 +86,55 @@ class HomeController extends Controller
     }
 
     public function pay_andresrve(Request $request){
-        if(Payment::where('user_id',Auth::user()->id)->first()->status == 0){
+
+        if(Payment::where('user_id',Auth::user()->id)->first()){
+            if(Payment::where('user_id',Auth::user()->id)->first()->status == 0){
+                $price = 4000;
+        if($request->data['code'] == 'khoroush'){
+            if(Auth::user()->picture == 'Khoroush'){
+                $price = 2000;
+            }
+        }
+        
+        $MerchantID = 'b3716ce1-e91d-46e5-9df8-91a4d26160f3'; //Required
+        $Amount = $price; //Amount will be based on Toman - Required
+        $Description = 'ثبت نام در رویداد خروش'; // Required
+        $Email = Auth::user()->email; // Optional
+        $Mobile = Auth::user()->phone; // Optional
+        $CallbackURL = 'http://counteramericacongress.com/check_pay/check_user'; // Required
+        //$CallbackURL = 'http://localhost:8000/check_pay/check_user'; // Required
 
         
+        $client = new SoapClient('https://www.zarinpal.com/pg/services/WebGate/wsdl', ['encoding' => 'UTF-8']);
+
+        $result = $client->PaymentRequest(
+        [
+        'MerchantID' => $MerchantID,
+        'Amount' => $Amount,
+        'Description' => $Description,
+        'Email' => $Email,
+        'Mobile' => $Mobile,
+        'CallbackURL' => $CallbackURL,
+        ]
+        );
+
+        if ($result->Status == 100) {
+            Payment::updateOrCreate(
+             ['user_id' => Auth::user()->id]   
+            ,[
+                'meri_code' => $result->Authority,
+                'price' => $Amount,
+                'user_id' => Auth::user()->id,
+            ]);
+
+            $url = "https://www.zarinpal.com/pg/StartPay/" . $result->Authority;
+            return $url;
+        }
+
+            }else{
+                
+            }
+        }else{
         $price = 4000;
         if($request->data['code'] == 'khoroush'){
             if(Auth::user()->picture == 'Khoroush'){
