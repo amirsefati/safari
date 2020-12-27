@@ -131,11 +131,11 @@ class HomeController extends Controller
 
     }
 
-    public function after_pay(){
+    public function after_pay(Request $request){
         $pay_detail = Payment::where('user_id',Auth::user()->id)->first();
         $MerchantID = 'b3716ce1-e91d-46e5-9df8-91a4d26160f3';
         $Amount = $pay_detail->price; //Amount will be based on Toman
-        $Authority = $_GET['Authority'];
+        $Authority = $request->Authority;
 
         if ($_GET['Status'] == 'OK') {
 
