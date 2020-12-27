@@ -98,7 +98,7 @@ class HomeController extends Controller
         $Description = 'ثبت نام در رویداد خروش'; // Required
         $Email = Auth::user()->email; // Optional
         $Mobile = Auth::user()->email; // Optional
-        $CallbackURL = 'http://localhost:8000/check_pay/check_user'; // Required
+        $CallbackURL = 'http://counteramericacongress.com/check_pay/check_user'; // Required
 
 
         $client = new SoapClient('https://www.zarinpal.com/pg/services/WebGate/wsdl', ['encoding' => 'UTF-8']);
