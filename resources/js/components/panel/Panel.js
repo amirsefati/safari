@@ -14,6 +14,7 @@ import Writing from '../panel_send/Writing';
 import Graphic from '../panel_send/Graphic';
 import Multiemdia from '../panel_send/Multiemdia';
 import Special from '../panel_send/special';
+import Payment from '../payment/payment';
 
 import Result from '../panel_result/Result'
 import Axios from 'axios';
@@ -83,6 +84,11 @@ function Panel(props){
             &nbsp; نتایج</Link>
             </Menu.Item>
 
+            <Menu.Item key="10" icon={<FileOutlined />}>
+              <Link to="/panel/payment">
+            &nbsp; ثبت نام در رویداد</Link>
+            </Menu.Item>
+
             {/* <Menu.Item key="10" icon={<PieChartOutlined />}>
               <Link to="/panel/settings">
              &nbsp;  تنظمیات کاربری</Link>
@@ -116,6 +122,7 @@ function Panel(props){
                   <Route path="/panel/special" component={Special}></Route>
 
                   <Route path="/panel/result" component={Result}></Route>
+                  <Route path="/panel/payment" component={Payment}></Route>
 
                   
                   

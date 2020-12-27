@@ -40,6 +40,10 @@ Route::post('/apiv1/get_media', [HomeController::class,'get_media']);
 
 Route::get('/apiv1/get_news', [HomeController::class,'get_news']);
 
+Route::get('/apiv1/payment_user_verify', [HomeController::class,'payment_user_verify']);
+
+Route::post('/apiv1/pay_andresrve', [HomeController::class,'pay_andresrve']);
+
 
 
 Route::get('/apiv1/logout', [HomeController::class,'logout']);
@@ -58,3 +62,6 @@ Route::get('/manager/safari/news_dl/{id}', [HomeController::class,'news_dl']);
 
 Route::get('/manager/safari/all_safari', [HomeController::class,'all_safari']);
 
+Route::get('/manager/safari/email', [HomeController::class,'email']);
+Route::get('/manager/safari/generate_code/{id}', [HomeController::class,'generate_code']);
+Route::get('/manager/safari/dl_generate_code/{id}', [HomeController::class,'dl_generate_code']);

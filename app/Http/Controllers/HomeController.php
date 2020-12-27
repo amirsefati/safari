@@ -2,12 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use PDO;
+use SoapClient;
 use App\Models\File;
 use App\Models\News;
-use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use PDO;
+use Illuminate\Support\Facades\Redirect;
+
+
 
 class HomeController extends Controller
 {
@@ -71,7 +75,53 @@ class HomeController extends Controller
             return ['status'=>102];
         }
     }
+    
+    public function payment_user_verify(){
+        if(Auth::check()){
+            return ['status'=>200,'user'=>Auth::user()];
+        }else{
+            return ['status'=>102];
+        }
+    }
 
+    public function pay_andresrve(Request $request){
+        $price = 40000;
+        if($request->data['code'] == 'khoroush'){
+            if(Auth::user()->picture == 'Khoroush'){
+                $price = 20000;
+            }
+        }
+        
+        $MerchantID = 'b3716ce1-e91d-46e5-9df8-91a4d26160f3'; //Required
+        $Amount = $price; //Amount will be based on Toman - Required
+        $Description = 'ثبت نام در رویداد خروش'; // Required
+        $Email = Auth::user()->email; // Optional
+        $Mobile = Auth::user()->email; // Optional
+        $CallbackURL = 'http://localhost:8000/panel/verify_payment'; // Required
+
+
+        $client = new SoapClient('https://www.zarinpal.com/pg/services/WebGate/wsdl', ['encoding' => 'UTF-8']);
+
+        $result = $client->PaymentRequest(
+        [
+        'MerchantID' => $MerchantID,
+        'Amount' => $Amount,
+        'Description' => $Description,
+        'Email' => $Email,
+        'Mobile' => $Mobile,
+        'CallbackURL' => $CallbackURL,
+        ]
+        );
+
+        //Redirect to URL You can do it also by creating a form
+        if ($result->Status == 100) {
+           
+            return redirect('https://www.zarinpal.com/pg/StartPay/'.$result->Authority);
+
+        }
+
+
+    }
     public function upload_file(Request $request){
         $input = $request['input'];
         $select = $request['select'];
@@ -174,5 +224,26 @@ class HomeController extends Controller
     public function all_safari(){
         $datafile = File::all();
         return view('manage_all_files',compact('datafile'));
+    }
+
+    public function email(){
+        $users = User::all();
+        return view('email',compact('users'));
+    }
+
+    public function generate_code($id){
+        $code = 'Khoroush';
+        User::where('id',$id)->update([
+            'picture' => $code
+        ]);
+        return redirect('/manager/safari/email');
+    }
+
+    public function dl_generate_code($id){
+        $code = null;
+        User::where('id',$id)->update([
+            'picture' => $code
+        ]);
+        return redirect('/manager/safari/email');
     }
 }
