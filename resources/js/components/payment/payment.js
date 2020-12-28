@@ -7,14 +7,14 @@ function Payment(){
     const [user,setuser] = useState([])
     const [selectList,setselectList] = useState(null)
     const [code,setcode] = useState(null)
-    const [price,setprice] = useState(40000)
+    const [price,setprice] = useState(20000)
 
     const handleChangeSelect =(value) =>{
         setselectList(value)
       }
 
     const handleChangeInput =(input) =>{
-        setprice(40000)
+        setprice(20000)
         setcode(input.target.value.toLowerCase())
         if(input.target.value.toLowerCase() === 'khoroush'){
           if(user.picture === 'Khoroush'){
@@ -23,7 +23,7 @@ function Payment(){
                 message:' کد تخفیف',
                 description:'کد تخفیف اعمال شد (تخفیف 50درصدی)'
               })
-              setprice(20000)
+              setprice(10000)
             }
           else{
             notification.open({
@@ -119,6 +119,7 @@ function Payment(){
             <Row>
                 <Col md={24} style={{textAlign:'center'}}>
                     <p> هزینه شرکت در رویداد : {price} هزار تومان</p>
+                    <p style={{fontSize:'11px'}}>(هزینه پذیرایی و رونمایی از مستند اخراج)</p>
                 </Col>
             </Row>
 

@@ -89,10 +89,10 @@ class HomeController extends Controller
 
         if(Payment::where('user_id',Auth::user()->id)->first()){
             if(Payment::where('user_id',Auth::user()->id)->first()->status == 0){
-                $price = 40000;
+                $price = 20000;
         if($request->data['code'] == 'khoroush'){
             if(Auth::user()->picture == 'Khoroush'){
-                $price = 20000;
+                $price = 10000;
             }
         }
         
@@ -135,10 +135,10 @@ class HomeController extends Controller
                 
             }
         }else{
-        $price = 40000;
+        $price = 20000;
         if($request->data['code'] == 'khoroush'){
             if(Auth::user()->picture == 'Khoroush'){
-                $price = 20000;
+                $price = 10000;
             }
         }
         
