@@ -24,7 +24,7 @@ function NavBar(props){
         <div className="top_nav" id="top_nav_id">
 
             <Link to="/" className="top_nav_a" onClick={close_menu}> صفحه اصلی </Link>
-            <Link to="/intro" className="top_nav_a" onClick={close_menu}>  معرفی رویداد  </Link>
+            <Link to="/intro" className="top_nav_a" onClick={close_menu}>  معرفی همایش  </Link>
             <Link to="/team" className="top_nav_a" onClick={close_menu}> کادر همایش </Link>
             
             {props.login ? 
